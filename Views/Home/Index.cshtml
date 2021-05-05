@@ -1,0 +1,21 @@
+﻿@model linebot.Models.IndexViewModel
+@{
+    ViewData["Title"] = "訊息發送測試";
+}
+
+<div class="text-center">
+    <h1 class="display-4">訊息發送測試</h1>
+    
+    <form asp-controller="Home" asp-action="Index" method="post">
+    
+        <div>
+            ID: @Html.EditorFor(m => m.Id)
+        </div>
+
+        <div>
+            Message: @Html.EditorFor(m => m.Message)
+        </div>
+        <hr />
+        <input type="submit" value="Send" />
+    </form>
+</div>
