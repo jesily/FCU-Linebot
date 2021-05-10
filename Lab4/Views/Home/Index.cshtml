@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lab 4: Dialogflow 整合</h1>
+    <form asp-controller="Home" asp-action="Index" method="post">
+        我想問：<input type="text" name="userSay" />
+        <input type="submit" />
+    </form>
+
+    回應：<span>@ViewData["response"]</span>
+
+</div>
