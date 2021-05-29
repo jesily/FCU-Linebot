@@ -53,6 +53,8 @@ namespace Lab4.Controllers
 
             // Make the request
             DetectIntentResponse response = sessionsClient.DetectIntent(request);
+
+            //將訊息傳送給 View 做顯示
             ViewData["response"] = response.QueryResult.FulfillmentText;
             return View();
         }

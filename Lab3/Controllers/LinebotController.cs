@@ -36,9 +36,8 @@ namespace linebot.Controllers
         [HttpPost]
         public ActionResult Post()
         {
-            isRock.LineBot.Bot bot;
-
-            bot = new isRock.LineBot.Bot(_AccessToken);
+            //return Ok();
+            isRock.LineBot.Bot bot = new isRock.LineBot.Bot(_AccessToken);
 
             try
             {
@@ -60,8 +59,11 @@ namespace linebot.Controllers
 
                     //回覆訊息
                     string Message = "hello, 你說了:" + userSays;
-                    //回覆用戶
+                    //回覆用戶 echo 訊息
                     bot.ReplyMessage(replyToken, Message);
+
+                    //回覆圖片
+                    bot.ReplyMessage(replyToken, new Uri("https://picsum.photos/200/300"));
                 }
                 //回覆API OK
                 return Ok();
